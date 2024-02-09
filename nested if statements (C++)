@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main() {
+
+	string season;
+	string preferance;
+
+	cout << "Do you like summer or winter?" << endl;
+	cin >> season;
+	cout << "Do you like sports or relaxing?" << endl;
+	cin >> preferance;
+	if (season == "summer") {
+		if (preferance == "sports")
+			cout << "you should go swimming" << endl;
+		else if (preferance == "relaxing")
+			cout << "you should go hang out by the beach" << endl;
+	}
+	if (season == "winter") {
+		if (preferance == "sports")
+			cout << "you should go snowboarding" << endl;
+		else if (preferance == "relaxing")
+			cout << "you should go ice fishing" << endl;
+	}
+}
