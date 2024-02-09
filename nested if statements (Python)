@@ -1,0 +1,20 @@
+season = (input("Do you like winter or summer more?"))
+if season == 'winter':
+    preferance = (input("Do you like playing sports or relaxing?"))
+    if preferance == 'sports':
+        print("you should go snowboarding")
+    elif preferance == 'relaxing':
+        print("you should go ice fishing")
+    else:
+        print("that wasnt an option tho")
+elif season == 'summer':
+    preferance = (input("Do you like playing sports or relaxing?"))
+    if preferance == 'sports':
+        print("you should try swimming")
+    elif preferance == 'relaxing':
+        print("you should hang out at the beach")
+    else:
+        print("that wasnt an option tho")
+        
+elif season != 'Summer' or 'Winter':
+    print("that wasn't my question")
