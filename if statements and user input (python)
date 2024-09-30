@@ -1,0 +1,7 @@
+name = input("whats your name? ")
+print("oh hello",name)
+age = int(input("how old are you? "))
+if age > 18:
+    print("dang, you're pretty old unc")
+else:
+    print("You're an L sigma")
