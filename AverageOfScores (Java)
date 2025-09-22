@@ -1,0 +1,97 @@
+/**
+ * Write a description of class Project1 here.
+ *
+ * This program will ask the user for their first name, last name, and 5 test scores.
+ * Once the user has given their input, the program will spit out their first initial, last name, all 5 scores, and the average of those scores.
+ *
+ * @author Jayden Clockston
+ * @version 9/14/25
+ */
+import java.util.Scanner;
+
+public class ScoreAverages
+{
+   public static void main(String[] args)
+   {
+       Scanner stdIn = new Scanner(System.in);
+       
+       //Variables section----------------------------------------------------------------
+       
+       String quit = "";
+       
+       //end of vaiables section---------------------------------------------------------
+       
+       /*System.out.println("Welcome to the program, would you like to continue?")
+           System.out.println("Press q to quit or c to continue.")
+           quit = stdIn.nextLine();*/
+       
+       while (!quit.equalsIgnoreCase("q")){
+           
+           //Variables section----------------------------------------------------------------
+           
+           String firstName;
+           String lastName;
+           
+           String scoresEntered = "";  // build a string of scores for display
+           
+           double sumOfScores = 0;
+           
+           int amountOfScores;
+       
+           double score;
+           
+           double averageScore; //variabel that holds the average of the test scors
+           
+           //end of vaiables section---------------------------------------------------------
+
+           System.out.println("What is your first name?"); //Asking the user for their first name
+           firstName = stdIn.nextLine(); //taking input for the first name
+           
+           System.out.println("What is your last name?"); //Asking the user for their last name
+           lastName = stdIn.nextLine(); //taking input for the last name
+           
+           System.out.println("How many test scores would you like to enter?");
+           amountOfScores = stdIn.nextInt();
+           
+           System.out.println("Enter your " + amountOfScores + " test scores seperated by a space: "); //Asking the user for their test scores
+           for (int i = 0; i < amountOfScores; i++) {
+               score = stdIn.nextDouble();
+               sumOfScores += score;
+               
+               scoresEntered += score;
+               if (i < amountOfScores - 1){
+                   scoresEntered += ", ";
+               }
+           }
+           
+           stdIn.nextLine();
+           
+           averageScore = (sumOfScores/amountOfScores); //This is taking the average of the test scores that the user entered
+           
+           //Below is the final print statement that outputs the users first initial, last name, all 5 test scores as ints, and then the average of those scores as a double.
+           System.out.println(firstName.charAt(0) + " " + lastName + " has entered the scores: " + scoresEntered + " with an average score of: " + averageScore);
+           
+           if(averageScore >= 90){
+               System.out.println("Your letter grade is an A");
+           }
+           else if(averageScore >= 80){
+               System.out.println("Your letter grade is a B");
+           }
+           else if(averageScore >= 70){
+               System.out.println("Your letter grade is a C");
+           }
+           else if(averageScore >= 60){
+               System.out.println("Your letter grade is a D");
+           }
+           else{
+               System.out.println("Your letter grade is an F");
+           }
+       
+                     
+            //System.out.println("Would you like to continue?");
+            System.out.println("Press q to quit or any other key to continue.");
+            quit = stdIn.nextLine();
+        }
+        stdIn.close();
+   }
+}
