@@ -1,0 +1,46 @@
+
+/**
+ * Write a description of class EggCounter here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+import java.util.Scanner;
+
+public class EggCounter{
+    public static void main(String[] args)
+    {
+        Scanner stdIn = new Scanner(System.in);
+        
+        String quit = "";
+        
+        while (!quit.equalsIgnoreCase("q")){
+            
+            double amountOfPeople;
+            
+            System.out.println("How many people want to eat?");
+            amountOfPeople = stdIn.nextDouble();
+            if (amountOfPeople <= 0){
+                System.out.println("no one wants to eat");
+            }
+            else if (amountOfPeople == 1){
+                System.out.println("Use 2 eggs");
+            }
+            else if (amountOfPeople == 2){
+                System.out.println("Use 3 eggs");
+            }
+            else if (amountOfPeople == 3){
+                System.out.println("Use 5 eggs");
+            }
+            else{
+                System.out.println("Go to waffle house");
+            }
+            
+            stdIn.nextLine();
+            
+            System.out.println("Press q to quit or any other key to continue.");
+            quit = stdIn.nextLine();
+        }
+        stdIn.close();
+    }
+}
