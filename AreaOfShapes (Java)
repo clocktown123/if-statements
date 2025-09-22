@@ -1,0 +1,88 @@
+/**
+ * Write a description of class AreaOfShape here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+
+import java.util.Scanner;
+
+public class AreaOfShape
+{
+    public static void main(String[] args)
+    {
+        Scanner stdIn = new Scanner(System.in);
+       
+        String quit = "";
+       
+        while (!quit.equalsIgnoreCase("q")){
+           
+            //variable section------------------------------
+           
+            String choice; // variable for choosing the shape
+           
+            //variables for circle
+            final double pi = 3.14; // the digits for pi
+            double radius; // radius of the circle
+           
+            //variables for square
+            double sideLength; // the length of one side for the square (all sides should be equal)
+           
+            //variables for triangle
+            final double half = 0.5; // 1/2 shouldn't be changed
+            double triangleBase; // base of the triangle
+            double triangleHeight; // height of the triangle
+           
+            //variables for rectangle
+            double rectangleBase; // base of the rectangle
+            double rectangleHeight; // height of the rectangle
+           
+            // area
+            double area;
+           
+            System.out.println("Please chose which shape to calculate the area for: circle, square, triangle, rectangle");
+            choice = stdIn.nextLine();
+           
+            //end of variable section ----------------------
+            if (choice.equalsIgnoreCase("circle")){
+                System.out.println("what is the radius of the circle?");
+                radius = stdIn.nextDouble();
+                area = pi * (radius * radius);
+                System.out.println("The shape chosen was a " + choice + " with a radius of " + radius + " which gives an area of " + area);
+            }
+            else if (choice.equalsIgnoreCase("square")){
+                System.out.println("what is the length for one side of the square? (all sides should be equal)");
+                sideLength = stdIn.nextDouble();
+                area = sideLength * sideLength;
+                System.out.println("The shape chosen was a " + choice + " with a side length of " + sideLength + " which gives an area of " + area);
+            }
+            else if (choice.equalsIgnoreCase("triangle")){
+                System.out.println("what is the base of the triangle?");
+                triangleBase = stdIn.nextDouble();
+                System.out.println("what is the height of the triangle?");
+                triangleHeight = stdIn.nextDouble();
+                area = half * triangleBase * triangleHeight;
+                System.out.println("The shape chosen was a " + choice + " with a base of " + triangleBase);
+                System.out.println("and a height of " + triangleHeight + " which gives an area of " + area);
+            }
+            else if (choice.equalsIgnoreCase("rectangle")){
+                System.out.println("what is the base of the rectangle?");
+                rectangleBase = stdIn.nextDouble();
+                System.out.println("what is the height of the rectangle?");
+                rectangleHeight = stdIn.nextDouble();
+                area = rectangleBase * rectangleHeight;
+                System.out.println("The shape chosen was a " + choice + " with a base of " + rectangleBase);
+                System.out.println("and a height of " + rectangleHeight + " which gives an area of " + area);
+            }
+            else{
+                System.out.println("That option is not among the list of shapes provided, please choose again");
+            }
+           
+            stdIn.nextLine();
+           
+            System.out.println("Press q to quit or any other key to continue.");
+            quit = stdIn.nextLine();
+        }
+        stdIn.close();
+    }
+}
